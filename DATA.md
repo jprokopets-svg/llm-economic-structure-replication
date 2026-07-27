@@ -51,7 +51,7 @@ v3: regex substitution with terminology leaks) are not included in this package.
 ## Zenodo Deposit
 
 Large raw response files that exceed GitHub size guidelines are archived at:
-Zenodo DOI pending
+https://doi.org/10.5281/zenodo.21616867
 
 These include:
 - Fork experiment raw model responses (~3.7 MB checkpoint + individual JSON files)

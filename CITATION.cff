@@ -9,6 +9,7 @@ authors:
 date-released: "2026-07-26"
 version: 1.0.1
 repository-code: "https://github.com/jprokopets-svg/llm-economic-structure-replication"
+doi: "10.5281/zenodo.21616867"
 license: MIT
 keywords:
   - large language models

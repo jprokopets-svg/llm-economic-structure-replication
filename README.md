@@ -170,7 +170,7 @@ OpenRouter, Google AI, or direct provider API keys to rerun model queries. See
 
 ## Data DOI
 
-Processed data are archived at: Zenodo DOI pending
+Processed data are archived at: https://doi.org/10.5281/zenodo.21616867
 
 ## Citation
 
