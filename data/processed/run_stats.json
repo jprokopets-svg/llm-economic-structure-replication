@@ -1,0 +1,47 @@
+{
+  "spend": {
+    "openrouter": 151.12515199999942,
+    "google": 41.57911199999999
+  },
+  "stats": {
+    "Claude Opus 4.8": {
+      "calls": 251,
+      "parse_ok": 251,
+      "parse_fail": 0,
+      "errors": 0,
+      "tokens_in": 1702100,
+      "tokens_out": 158383,
+      "cost": 37.41022500000001
+    },
+    "Claude Sonnet 4.6": {
+      "calls": 250,
+      "parse_ok": 250,
+      "parse_fail": 0,
+      "errors": 0,
+      "tokens_in": 1244588,
+      "tokens_out": 197296,
+      "cost": 6.693204
+    },
+    "GPT-5.5": {
+      "calls": 250,
+      "parse_ok": 250,
+      "parse_fail": 0,
+      "errors": 0,
+      "tokens_in": 1179821,
+      "tokens_out": 219193,
+      "cost": 12.474894999999993
+    },
+    "Gemini 3.5 Flash": {
+      "calls": 249,
+      "parse_ok": 237,
+      "parse_fail": 12,
+      "errors": 1,
+      "tokens_in": 1230994,
+      "tokens_out": 175718,
+      "cost": 14.559666
+    }
+  },
+  "total_calls": 1000,
+  "total_errors": 1,
+  "timestamp": "2026-07-15T22:49:03.441589"
+}

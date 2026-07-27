@@ -1,0 +1,40 @@
+name: world2_closed_economy
+period: quarterly
+n_history_periods: 60
+
+# Closed-economy NK model: four endogenous variables (y, pi, r, u).
+# Drops UIP and exchange rate channel from world 1.
+
+targets:
+  r_star: 2.0
+  pi_star: 2.0
+  u_star: 5.0
+  # No e_star, no r_world — closed economy
+
+is_curve:
+  output_persistence: 0.8
+  interest_sensitivity: 0.6
+  # No exchange_sensitivity — closed economy
+
+phillips_curve:
+  inflation_persistence: 0.95      # < 1 removes unit root; Gali (2008), Stock & Watson (1999)
+  output_slope: 0.4
+  # No exchange_passthrough — closed economy
+
+taylor_rule:
+  inflation_coefficient: 1.5
+  output_coefficient: 2.0       # same calibration logic as world 1
+  smoothing_rho: 0.85           # Dotsey & Sill (2015)
+
+okun:
+  coefficient: 0.5
+
+shocks:
+  sigma_y: 0.7
+  sigma_pi: 0.4
+  # No sigma_e — closed economy
+
+initial_conditions:
+  y_0: 0.0
+  pi_0: 2.0
+  r_0: 2.0

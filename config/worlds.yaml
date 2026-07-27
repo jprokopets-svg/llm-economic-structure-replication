@@ -1,0 +1,35 @@
+# World definitions — maps world IDs to v1 simulator classes and configs.
+#
+# enabled: whether to include in a default run (use --worlds flag to override)
+# v1_config: path to the YAML config in the v1 repo
+# v1_simulator: import path for the simulator class
+# variables: forecast variables for this world
+
+worlds:
+  world1:
+    name: "Open Economy (Ball 1999)"
+    enabled: true
+    v1_config: "../LLM-Matrix/config/ball_baseline.yaml"
+    v1_simulator: "llmmatrix.simulator.Sim"
+    variables: ["y", "pi", "r", "e", "u"]
+
+  world2:
+    name: "Closed Economy"
+    enabled: true
+    v1_config: "../LLM-Matrix/config/world2_closed_economy.yaml"
+    v1_simulator: "llmmatrix.world2_simulator.ClosedSim"
+    variables: ["y", "pi", "r", "u"]
+
+  world3:
+    name: "Emerging Market"
+    enabled: false    # gated — run with --worlds 3,4
+    v1_config: "../LLM-Matrix/config/world3_emerging_market.yaml"
+    v1_simulator: "llmmatrix.world3_simulator.EmergingSim"
+    variables: ["y", "pi", "r", "e", "u"]
+
+  world4:
+    name: "Labor Hysteresis"
+    enabled: false    # gated — run with --worlds 3,4
+    v1_config: "../LLM-Matrix/config/world4_labor_hysteresis.yaml"
+    v1_simulator: "llmmatrix.world4_simulator.HysteresisSim"
+    variables: ["y", "pi", "r", "u", "w", "u_natural"]

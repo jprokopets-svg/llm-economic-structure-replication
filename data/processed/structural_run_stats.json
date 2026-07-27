@@ -1,0 +1,53 @@
+{
+  "run_id": "structural_tracking_v2",
+  "completed": "2026-06-24T18:35:37.606768",
+  "total_scheduled": 5600,
+  "total_completed": 5600,
+  "spend": {
+    "openrouter": 56.82341290000011,
+    "google": 16.423311
+  },
+  "per_model": {
+    "DeepSeek V4 Pro": {
+      "calls": 307,
+      "parse_ok": 140,
+      "parse_fail": 167,
+      "errors": 65,
+      "tokens_in": 1404647,
+      "tokens_out": 1258287,
+      "thinking": 0,
+      "cost": 1.698707899999998
+    },
+    "Gemini 3.5 Flash": {
+      "calls": 325,
+      "parse_ok": 312,
+      "parse_fail": 13,
+      "errors": 314,
+      "tokens_in": 1628516,
+      "tokens_out": 239204,
+      "thinking": 1314189,
+      "cost": 16.423311
+    },
+    "GPT-5.5": {
+      "calls": 291,
+      "parse_ok": 275,
+      "parse_fail": 16,
+      "errors": 79,
+      "tokens_in": 1277755,
+      "tokens_out": 1364377,
+      "thinking": 0,
+      "cost": 47.320084999999985
+    },
+    "Claude Sonnet 4.6": {
+      "calls": 291,
+      "parse_ok": 288,
+      "parse_fail": 3,
+      "errors": 77,
+      "tokens_in": 1393250,
+      "tokens_out": 241658,
+      "thinking": 0,
+      "cost": 7.804620000000001
+    }
+  },
+  "stop_reason": "complete"
+}

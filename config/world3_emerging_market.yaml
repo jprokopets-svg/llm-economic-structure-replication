@@ -1,0 +1,48 @@
+name: world3_emerging_market
+period: quarterly
+n_history_periods: 60
+
+# Emerging-market high-inflation regime.
+# Calibrated to Castro et al. (2017) augmented Taylor rule for
+# emerging economies; BIS Hofmann & Bogdanova (2012) volatility estimates.
+
+targets:
+  r_star: 4.0          # higher neutral rate (emerging markets)
+  pi_star: 6.0         # high-inflation target regime
+  e_star: 0.0
+  u_star: 7.0          # higher structural unemployment
+  r_world: 2.0         # foreign rate at advanced-economy level
+
+is_curve:
+  output_persistence: 0.8
+  interest_sensitivity: 0.6
+  exchange_sensitivity: 0.4    # higher FX sensitivity (emerging markets; world 1 = 0.2)
+
+phillips_curve:
+  inflation_persistence: 0.90  # slightly less persistent (more volatile regime)
+  output_slope: 0.5            # steeper Phillips curve
+  exchange_passthrough: 0.4    # higher FX passthrough (emerging markets; world 1 = 0.2)
+
+taylor_rule:
+  smoothing_rho: 0.7           # less smoothing (more aggressive response)
+  inflation_coefficient: 2.0   # stronger inflation response (Castro et al. 2017)
+  output_coefficient: 1.0      # moderate output response
+  exchange_coefficient: 0.3    # NEW: augmented rule includes FX (Castro et al. 2017)
+
+uip:
+  interest_differential: 2.5   # higher UIP coefficient (emerging market FX more rate-sensitive)
+
+okun:
+  coefficient: 0.5
+
+shocks:
+  sigma_y: 1.0       # higher demand volatility (world 1 = 0.7)
+  sigma_pi: 0.8      # higher inflation volatility (world 1 = 0.4)
+  sigma_e: 2.5       # much higher FX volatility (world 1 = 1.5)
+
+initial_conditions:
+  y_0: 0.0
+  pi_0: 6.0          # at high-inflation target
+  r_0: 4.0
+  e_0: 0.0
+  e_minus1: 0.0

@@ -1,0 +1,7 @@
+# NOTE: This file is retained for reference only.
+# The authoritative parameter grids are in parameter_grids.yaml.
+# The actual experimental grids are hardcoded in the runner scripts
+# (run_structural_tracking.py PARAMS dict, run_fork.py PARAMS dict).
+#
+# The DO NOT USE the settings or direction_hints in this file for
+# reproduction. Use parameter_grids.yaml instead.

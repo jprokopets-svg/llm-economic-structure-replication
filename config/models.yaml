@@ -1,0 +1,24 @@
+# Models to run in the structural-understanding benchmark.
+# Edit this list to add or remove models.
+# Each entry must have: id, provider, and optionally two_stage_extraction.
+
+models:
+  - id: "claude-sonnet-4-6"
+    provider: anthropic
+    two_stage_extraction: false
+
+  - id: "claude-haiku-4-5-20251001"
+    provider: anthropic
+    two_stage_extraction: false
+
+  - id: "gpt-5-mini"
+    provider: openai
+    two_stage_extraction: false
+
+  - id: "deepseek-chat"
+    provider: deepseek
+    two_stage_extraction: false
+
+  - id: "deepseek-reasoner"
+    provider: deepseek
+    two_stage_extraction: true   # v1 had parse failures with reasoning models

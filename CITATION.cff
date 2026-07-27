@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Replication package for 'Do Large Language Models Track Economic Structure? Evidence from Synthetic Economies'"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Prokopets
+    given-names: Jake
+    email: jprokopets@gmail.com
+    orcid: ""
+date-released: "2026-07-26"
+version: 1.0.0
+repository-code: "https://github.com/[placeholder]/llm-economic-structure-replication"
+doi: "10.5281/zenodo.[placeholder]"
+license: "MIT (pending)"
+keywords:
+  - large language models
+  - macroeconomic forecasting
+  - structural change
+  - Lucas critique
+  - synthetic economies

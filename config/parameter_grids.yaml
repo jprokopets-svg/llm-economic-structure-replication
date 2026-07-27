@@ -1,0 +1,63 @@
+# Authoritative parameter grids used in the paper.
+# These values are hardcoded in the runner scripts (run_structural_tracking.py
+# and run_fork.py) and reproduced here for reference.
+
+# --- Phillips-curve slope ---
+# Config key: phillips_curve.output_slope (Worlds 1-3)
+# Config key: price_phillips.output_slope (World 4)
+phillips_slope:
+  world1:
+    baseline: 0.4
+    settings: [0.1, 0.2, 0.4, 0.6, 0.8]
+  world2:
+    baseline: 0.4
+    settings: [0.1, 0.2, 0.4, 0.6, 0.8]
+  world3:
+    baseline: 0.5
+    settings: [0.1, 0.3, 0.5, 0.7, 0.9]
+  world4:
+    config_key: price_phillips.output_slope
+    baseline: 0.2
+    settings: [0.05, 0.1, 0.2, 0.3, 0.5]
+
+# Fork OOD (out-of-distribution) extension for World 1 phillips_slope:
+#   ood: [0.05, 1.0]
+
+# --- Taylor-rule inflation coefficient ---
+# Config key: taylor_rule.inflation_coefficient
+taylor_phi_pi:
+  world1:
+    baseline: 1.5
+    settings: [1.1, 1.3, 1.5, 2.0, 2.5]
+  world2:
+    baseline: 1.5
+    settings: [1.1, 1.3, 1.5, 2.0, 2.5]
+  world3:
+    baseline: 2.0
+    settings: [1.1, 1.5, 2.0, 2.5, 3.0]
+  world4:
+    baseline: 1.5
+    settings: [1.1, 1.3, 1.5, 2.0, 2.5]
+
+# --- IS interest sensitivity ---
+# Config key: is_curve.interest_sensitivity
+is_sensitivity:
+  world1:
+    baseline: 0.6
+    settings: [0.2, 0.4, 0.6, 0.8, 1.0]
+  world2:
+    baseline: 0.6
+    settings: [0.2, 0.4, 0.6, 0.8, 1.0]
+  world3:
+    baseline: 0.6
+    settings: [0.2, 0.4, 0.6, 0.8, 1.0]
+  world4:
+    baseline: 0.6
+    settings: [0.2, 0.4, 0.6, 0.8, 1.0]
+
+# --- Wage-gap slope (World 4 only) ---
+# Config key: wage_phillips.unemployment_gap_slope
+wage_gap_slope:
+  world4:
+    baseline: 0.5
+    settings: [0.1, 0.3, 0.5, 0.7, 1.0]

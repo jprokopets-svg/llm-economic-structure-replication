@@ -1,0 +1,63 @@
+name: world4_labor_hysteresis
+period: quarterly
+n_history_periods: 60
+
+# Closed-economy NK model with explicit labor market dynamics.
+# Features: wage Phillips curve, time-varying NAIRU with hysteresis,
+# productivity passthrough.
+#
+# Blanchard & Summers (1986) — hysteresis
+# Layard, Nickell & Jackman (1991) — wage Phillips curve
+# Gordon (2013) — triangle model with supply shifts
+
+targets:
+  r_star: 2.0
+  pi_star: 2.0
+  u_natural_initial: 5.0     # initial NAIRU (evolves via hysteresis)
+  w_star: 2.0                # steady-state wage inflation = pi_star
+
+is_curve:
+  output_persistence: 0.8
+  interest_sensitivity: 0.6
+
+price_phillips:
+  inflation_persistence: 0.85    # slightly less than W1 (labor channel does more work)
+  wage_passthrough: 0.4          # wages drive prices
+  output_slope: 0.2              # smaller direct output effect
+
+wage_phillips:
+  wage_persistence: 0.8           # wages sticky (Layard-Nickell-Jackman)
+  unemployment_gap_slope: 0.5     # responsiveness to u - u_natural
+  productivity_passthrough: 0.7   # productivity passthrough to wages
+
+productivity:
+  persistence: 0.9                # mean-reverting (not random walk); prevents unbounded drift
+
+nairu_dynamics:
+  hysteresis_coefficient: 0.08    # Blanchard-Summers: NAIRU drifts toward actual u
+  u_natural_anchor: 5.0           # long-run anchor preventing unbounded drift
+  anchor_weight: 0.02             # gentle pull toward anchor
+
+okun:
+  coefficient: 0.5
+
+taylor_rule:
+  smoothing_rho: 0.85
+  inflation_coefficient: 1.5
+  output_coefficient: 2.0
+
+shocks:
+  sigma_y: 0.7
+  sigma_pi: 0.3              # smaller (wages do more work)
+  sigma_w: 0.3               # wage shock
+  sigma_productivity: 0.3    # productivity shock
+  sigma_u_natural: 0.2       # direct NAIRU shock (labor supply)
+
+initial_conditions:
+  y_0: 0.0
+  pi_0: 2.0
+  r_0: 2.0
+  u_0: 5.0
+  u_natural_0: 5.0
+  w_0: 2.0
+  productivity_0: 0.0        # deviation from trend
