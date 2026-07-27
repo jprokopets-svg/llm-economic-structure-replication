@@ -182,7 +182,8 @@ def bootstrap_ci_clustered(
 # ---------------------------------------------------------------------------
 
 def main():
-    output_dir = V2_ROOT / "outputs" / "v2_results"
+    # Default output: data/processed/ for offline reproducibility.
+    output_dir = V2_ROOT / "data/processed"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # ===== Phase 1: Load data and compute ground truth =====

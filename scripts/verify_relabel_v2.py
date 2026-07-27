@@ -270,11 +270,11 @@ def _paired_diff(rows_a, rows_b, n_boot=10000, seed=42):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--relabel-run",
-                       default=str(V2_ROOT / "outputs/relabel_run_v4"))
+                       default=str(V2_ROOT / "data/processed"))
     parser.add_argument("--per-seed-gt",
-                       default="/tmp/lmm2_per_seed_test/ground_truth_per_seed.json")
+                       default=str(V2_ROOT / "data/processed/ground_truth_per_seed.json"))
     parser.add_argument("--reference-json",
-                       default=str(V2_ROOT / "outputs/analysis/relabel_v2_final.json"))
+                       default=str(V2_ROOT / "data/processed/relabel_v2_final.json"))
     parser.add_argument("--n-boot", type=int, default=10000)
     parser.add_argument("--tolerance-pp", type=float, default=0.5)
     args = parser.parse_args()
@@ -286,8 +286,8 @@ def main():
     # on run_analysis.load_forecasts).
     infer_records = []
     for cp_rel in [
-        "outputs/structural_tracking_v2/checkpoint.jsonl",
-        "outputs/opus_run/checkpoint.jsonl",
+        "data/processed/infer_checkpoint.jsonl",
+        "data/processed/opus_checkpoint.jsonl",
     ]:
         cp = V2_ROOT / cp_rel
         if not cp.exists():
@@ -420,7 +420,7 @@ def main():
             )
     lines.append("")
 
-    out_path = V2_ROOT / "outputs/analysis/relabel_v2_verify_report.md"
+    out_path = V2_ROOT / "data/processed/relabel_v2_verify_report.md"
     out_path.write_text("\n".join(lines))
     logger.info(f"Wrote {out_path}")
 

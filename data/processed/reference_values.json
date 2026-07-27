@@ -1,0 +1,241 @@
+{
+  "_metadata": {
+    "description": "Reference headline values extracted from checked-in reports in data/processed/. Used by scripts/verify_replication.py to validate reproduction.",
+    "tolerance_pp": 0.5,
+    "tolerance_abs": 1.0,
+    "source_reports": [
+      "fork_scoring_report.md",
+      "fork_scoring_dual_report.md",
+      "fork_verification_report.md",
+      "relabel_v2_final.json",
+      "relabel_v2_verify_report.md",
+      "zero_response_report.md",
+      "three_condition.json"
+    ]
+  },
+  "fork": {
+    "description": "Fork experiment primary results (ARM2-ARM1, eligible cells)",
+    "strict_accuracy": {
+      "Claude Opus 4.8": {
+        "acc_pct": 30.9,
+        "ci_low": 29.1,
+        "ci_high": 32.8,
+        "n": 5893
+      },
+      "Claude Sonnet 4.6": {
+        "acc_pct": 35.1,
+        "ci_low": 32.2,
+        "ci_high": 38.2,
+        "n": 5754
+      },
+      "GPT-5.5": {
+        "acc_pct": 49.9,
+        "ci_low": 46.8,
+        "ci_high": 53.3,
+        "n": 5893
+      },
+      "Gemini 3.5 Flash": {
+        "acc_pct": 42.5,
+        "ci_low": 40.0,
+        "ci_high": 45.1,
+        "n": 5480
+      }
+    },
+    "arm21_accuracy": {
+      "Claude Opus 4.8": {
+        "acc_pct": 30.6,
+        "ci_low": 28.6,
+        "ci_high": 32.7,
+        "n": 5893
+      },
+      "Claude Sonnet 4.6": {
+        "acc_pct": 37.6,
+        "ci_low": 35.4,
+        "ci_high": 39.8,
+        "n": 5883
+      },
+      "GPT-5.5": {
+        "acc_pct": 49.3,
+        "ci_low": 46.3,
+        "ci_high": 52.4,
+        "n": 5893
+      },
+      "Gemini 3.5 Flash": {
+        "acc_pct": 41.5,
+        "ci_low": 39.0,
+        "ci_high": 44.1,
+        "n": 5467
+      }
+    },
+    "fork_sample_counts": {
+      "Claude Opus 4.8": 5893,
+      "Claude Sonnet 4.6": 5754,
+      "GPT-5.5": 5893,
+      "Gemini 3.5 Flash": 5480
+    },
+    "zero_response_share": {
+      "Claude Opus 4.8": 40.8,
+      "Claude Sonnet 4.6": 26.5,
+      "GPT-5.5": 15.9,
+      "Gemini 3.5 Flash": 27.0
+    },
+    "tie_adjusted_accuracy": {
+      "Claude Opus 4.8": 51.1,
+      "Claude Sonnet 4.6": 50.8,
+      "GPT-5.5": 57.2,
+      "Gemini 3.5 Flash": 55.0
+    }
+  },
+  "relabel_v4": {
+    "description": "Final v4 RELABEL results (three-condition table with paired diffs)",
+    "models": [
+      "Claude Sonnet 4.6",
+      "GPT-5.5",
+      "Gemini 3.5 Flash"
+    ],
+    "parse_rates": {
+      "Claude Sonnet 4.6": {
+        "ok": 650,
+        "fail": 0,
+        "error": 0,
+        "rate": 100.0
+      },
+      "GPT-5.5": {
+        "ok": 650,
+        "fail": 0,
+        "error": 0,
+        "rate": 100.0
+      },
+      "Gemini 3.5 Flash": {
+        "ok": 650,
+        "fail": 0,
+        "error": 0,
+        "rate": 100.0
+      }
+    },
+    "all_tier": {
+      "Claude Sonnet 4.6": {
+        "relabel_acc": 57.3,
+        "infer_acc": 54.9,
+        "diff_pp": 2.4,
+        "n_relabel": 7538,
+        "n_infer": 6757
+      },
+      "GPT-5.5": {
+        "relabel_acc": 75.4,
+        "infer_acc": 73.1,
+        "diff_pp": 2.3,
+        "n_relabel": 7515,
+        "n_infer": 6043
+      },
+      "Gemini 3.5 Flash": {
+        "relabel_acc": 66.5,
+        "infer_acc": 64.1,
+        "diff_pp": 2.4,
+        "n_relabel": 7538,
+        "n_infer": 4991
+      }
+    },
+    "moderate_tier": {
+      "Claude Sonnet 4.6": {
+        "relabel_acc": 57.8,
+        "infer_acc": 55.4,
+        "diff_pp": 2.4,
+        "n_relabel": 5848,
+        "n_infer": 5375
+      },
+      "GPT-5.5": {
+        "relabel_acc": 76.9,
+        "infer_acc": 74.4,
+        "diff_pp": 2.5,
+        "n_relabel": 5834,
+        "n_infer": 4814
+      },
+      "Gemini 3.5 Flash": {
+        "relabel_acc": 67.2,
+        "infer_acc": 65.3,
+        "diff_pp": 1.9,
+        "n_relabel": 5848,
+        "n_infer": 3839
+      }
+    },
+    "strict_tier": {
+      "Claude Sonnet 4.6": {
+        "relabel_acc": 49.3,
+        "infer_acc": 50.3,
+        "diff_pp": -1.0,
+        "n_relabel": 708,
+        "n_infer": 686
+      },
+      "GPT-5.5": {
+        "relabel_acc": 73.0,
+        "infer_acc": 69.2,
+        "diff_pp": 3.8,
+        "n_relabel": 705,
+        "n_infer": 614
+      },
+      "Gemini 3.5 Flash": {
+        "relabel_acc": 60.3,
+        "infer_acc": 55.8,
+        "diff_pp": 4.5,
+        "n_relabel": 708,
+        "n_infer": 362
+      }
+    }
+  },
+  "regression_tests": {
+    "description": "102 regression tests across models, parameters, conditions, and horizons",
+    "count": 102,
+    "uncorrected_significant": 8,
+    "surviving_bh_correction": 0
+  },
+  "grid_accuracy": {
+    "description": "Grid experiment infer accuracy from three_condition.json",
+    "all_tier": {
+      "Claude Sonnet 4.6": {
+        "acc_pct": 54.9,
+        "n": 6757
+      },
+      "Claude Opus 4.8": {
+        "acc_pct": 60.6,
+        "n": 7538
+      },
+      "GPT-5.5": {
+        "acc_pct": 73.1,
+        "n": 6043
+      },
+      "Gemini 3.5 Flash": {
+        "acc_pct": 64.1,
+        "n": 4991
+      },
+      "DeepSeek V4 Pro": {
+        "acc_pct": 53.9,
+        "n": 1387
+      }
+    }
+  },
+  "var_result": {
+    "description": "VAR baseline accuracy from simple_baselines report",
+    "all_tier": {
+      "acc_pct": 87.3,
+      "ci_low": 84.8,
+      "ci_high": 89.7,
+      "n": 4833
+    },
+    "strict_tier": {
+      "acc_pct": 82.4,
+      "ci_low": 76.3,
+      "ci_high": 88.7,
+      "n": 546
+    }
+  },
+  "told_vs_infer": {
+    "description": "TOLD minus INFER gap from run_analysis output",
+    "models": {
+      "Claude Sonnet 4.6": {},
+      "GPT-5.5": {},
+      "Gemini 3.5 Flash": {},
+      "DeepSeek V4 Pro": {}
+    }
+  }
+}

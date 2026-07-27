@@ -17,7 +17,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 V2_ROOT = Path(__file__).resolve().parent.parent
-FORK_DIR = V2_ROOT / "outputs" / "fork_run"
+# Default: read checked-in data from data/processed/.
+FORK_DIR = V2_ROOT / "data" / "processed"
 FIG_DIR = V2_ROOT / "paper" / "figures"
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 

@@ -414,7 +414,7 @@ def main():
     lines.append("")
 
     report_text = "\n".join(lines)
-    out_path = V2_ROOT / "outputs" / "analysis" / "simple_baselines_report.md"
+    out_path = V2_ROOT / "data/processed/simple_baselines_report.md"
     out_path.write_text(report_text)
     logger.info(f"Report written to {out_path}")
     print(report_text)

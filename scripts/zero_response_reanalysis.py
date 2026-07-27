@@ -45,9 +45,10 @@ logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s %(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-FORK_DIR = V2_ROOT / "outputs" / "fork_run"
-ANALYSIS_DIR = V2_ROOT / "outputs" / "analysis"
-GRID_DIR = V2_ROOT / "outputs" / "structural_tracking_v2"
+# Default: read checked-in data from data/processed/.
+FORK_DIR = V2_ROOT / "data" / "processed"
+ANALYSIS_DIR = V2_ROOT / "data" / "processed"
+GRID_DIR = V2_ROOT / "data" / "processed"
 
 FORK_GT_FILE = FORK_DIR / "fork_ground_truth.json"
 FORK_CHECKPOINT = FORK_DIR / "checkpoint.jsonl"

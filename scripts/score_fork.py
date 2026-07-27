@@ -29,7 +29,9 @@ logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s %(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-FORK_DIR = V2_ROOT / "outputs" / "fork_run"
+# Default: read checked-in data from data/processed/.
+# To score against live run output, set DATA_DIR environment variable.
+FORK_DIR = V2_ROOT / "data" / "processed"
 GT_FILE = FORK_DIR / "fork_ground_truth.json"
 CHECKPOINT_FILE = FORK_DIR / "checkpoint.jsonl"
 TRENDS_FILE = FORK_DIR / "prefork_trends.json"
@@ -454,6 +456,8 @@ def main():
 
     # Write report
     report_text = "\n".join(lines)
+    # In offline mode (data/processed/), the report exists as checked-in artefact.
+    # Writing to FORK_DIR keeps it in the same location for comparison.
     out_path = FORK_DIR / "fork_scoring_report.md"
     out_path.write_text(report_text)
     logger.info(f"Report written to {out_path}")

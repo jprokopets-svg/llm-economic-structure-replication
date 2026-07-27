@@ -16,8 +16,8 @@ import yaml
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIG_DIR = PROJECT_ROOT / "config"
 
-# v1 repo root — resolved relative to project root
-V1_ROOT = PROJECT_ROOT.parent / "LLM-Matrix"
+# v1 repo root — simulator configs are now local
+V1_ROOT = PROJECT_ROOT
 
 
 def load_yaml(path: str | Path) -> dict[str, Any]:
@@ -82,6 +82,6 @@ def resolve_v1_config(relative_path: str) -> str:
     if not resolved.exists():
         raise FileNotFoundError(
             f"v1 config not found: {resolved}. "
-            f"Make sure the LLM-Matrix repo is at {V1_ROOT}"
+            f"All configs should be local under {PROJECT_ROOT / 'config'}"
         )
     return str(resolved)

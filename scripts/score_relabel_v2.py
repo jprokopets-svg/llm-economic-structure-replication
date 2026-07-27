@@ -146,17 +146,17 @@ def _paired_diff(rows_a, rows_b, n_boot=10000, seed=42,
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--relabel-run", default=str(V2_ROOT / "outputs/relabel_run_v4"))
+    parser.add_argument("--relabel-run", default=str(V2_ROOT / "data/processed"))
     parser.add_argument("--per-seed-gt",
-                       default="/tmp/lmm2_per_seed_test/ground_truth_per_seed.json")
+                       default=str(V2_ROOT / "data/processed/ground_truth_per_seed.json"))
     parser.add_argument("--seed42-gt", default=None)
     parser.add_argument("--n-boot", type=int, default=10000)
     parser.add_argument("--n-perm", type=int, default=10000)
     args = parser.parse_args()
 
     gt_ps = json.loads(Path(args.per_seed_gt).read_text())
-    gt42 = json.loads(Path(args.seed42_gt or
-                            (V2_ROOT / "outputs/structural_tracking_v2/ground_truth.json")).read_text())
+    gt42_path = args.seed42_gt or str(V2_ROOT / "data/processed/ground_truth.json")
+    gt42 = json.loads(Path(gt42_path).read_text())
 
     told_infer = load_forecasts()
     told_infer = [r for r in told_infer if r.get("condition") != "relabel"]
@@ -353,7 +353,7 @@ def main():
             )
     lines.append("")
 
-    report_path = V2_ROOT / "outputs/analysis/strict_rescore_report.md"
+    report_path = V2_ROOT / "data/processed/strict_rescore_report.md"
     existing = report_path.read_text()
     marker = "## Relabel v2 (final): three-condition table + paired"
     if marker in existing:
@@ -362,7 +362,7 @@ def main():
     logger.info(f"Appended to {report_path}")
 
     # JSON dump.
-    (V2_ROOT / "outputs/analysis/relabel_v2_final.json").write_text(json.dumps({
+    (V2_ROOT / "data/processed/relabel_v2_final.json").write_text(json.dumps({
         "parse_stats": parse_stats,
         "total_cost": total_cost,
         "paired_by_tier": {

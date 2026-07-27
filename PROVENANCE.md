@@ -6,7 +6,7 @@ Every file in this repository was copied from either the `LLM-Matrix2` or
 ## Source Repositories
 
 - **LLM-Matrix2:** `../LLM-Matrix2/` (commit 19164c4)
-- **LLM-Matrix:** `../LLM-Matrix/` (v1 simulator repository)
+- **LLM-Matrix:** `../LLM-Matrix/` (v1 simulator repository, commit 7c1339b)
 
 ## File Map
 

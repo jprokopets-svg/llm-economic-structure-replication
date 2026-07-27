@@ -57,7 +57,8 @@ def load_forecasts():
     """
     # Deduplicate: last record per call_id wins
     last_record = {}
-    with open(V2_ROOT / "outputs/structural_tracking_v2/checkpoint.jsonl") as f:
+    # Default: read checked-in data from data/processed/.
+    with open(V2_ROOT / "data/processed/checkpoint.jsonl") as f:
         for line in f:
             r = json.loads(line)
             last_record[r['call_id']] = r
@@ -131,7 +132,8 @@ def load_ground_truth():
         },
     }
 
-    gt_cache_path = V2_ROOT / "outputs/structural_tracking_v2/ground_truth.json"
+    # Default: read checked-in data from data/processed/.
+    gt_cache_path = V2_ROOT / "data/processed/ground_truth.json"
     if gt_cache_path.exists():
         logger.info("Loading cached ground truth...")
         with open(gt_cache_path) as f:
@@ -508,7 +510,8 @@ def compute_baseline_sign_test(ground_truth):
 
 
 def main():
-    output_dir = V2_ROOT / "outputs/structural_tracking_v2"
+    # Default: write to data/processed/ (or override via env).
+    output_dir = V2_ROOT / "data/processed"
 
     # Load data
     logger.info("Loading forecasts...")

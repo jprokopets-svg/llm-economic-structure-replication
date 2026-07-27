@@ -60,9 +60,14 @@ These include:
 
 ## Licensing
 
-The processed summary data in this repository may be redistributed under the
-repository license. Model outputs are subject to the terms of service of the
-respective API providers (OpenAI, Anthropic, Google, DeepSeek).
+The processed summary data in `data/processed/` and saved model responses are
+provided under the **Creative Commons Attribution 4.0 International (CC BY 4.0)**
+license. You may copy, redistribute, and adapt the data for any purpose,
+provided you give appropriate credit to the original author.
+
+Model outputs are subject to the terms of service of the respective API
+providers (OpenAI, Anthropic, Google, DeepSeek). Consult each provider's terms
+before redistributing model outputs.
 
 ## Units
 
