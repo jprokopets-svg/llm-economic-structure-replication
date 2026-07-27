@@ -6,11 +6,10 @@ authors:
   - family-names: Prokopets
     given-names: Jake
     email: jprokopets@gmail.com
-    orcid: ""
 date-released: "2026-07-26"
-version: 1.0.0
+version: 1.0.1
 repository-code: "https://github.com/jprokopets-svg/llm-economic-structure-replication"
-license: "MIT (pending)"
+license: MIT
 keywords:
   - large language models
   - macroeconomic forecasting
